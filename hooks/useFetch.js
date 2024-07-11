@@ -26,7 +26,7 @@ export const useFetch = (endpoint, query) => {
 
         try {
             const res = await axios.request(options)
-            setData(res.data.data
+            setData(res.data.data)
                 setIsLoading(false)
 
         } catch (e){
