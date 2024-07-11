@@ -41,7 +41,7 @@ const Welcome = () => {
                             style={styles.tab(activeJobType, item)}
                             onPress={() => {
                                 setActiveJobType(item)
-                                router.push(`/seacrh${item}`)
+                                router.push(`/seacrh/${item}`)
                             }
                         }
 
