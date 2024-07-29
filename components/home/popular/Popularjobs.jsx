@@ -20,7 +20,7 @@ const Popularjobs = () => {
             <TouchableOpacity><Text style={styles.headerBtn}>Show all</Text></TouchableOpacity>
         </View>
         <View style={styles.cardsContainer}>
-            {isLoading ? <ActivityIndicator size={"large"} color={COLORS.primary} /> : error ? <Text>Something went wrong</Text> : <FlatList data={[0,1,2,3,4,5]} renderItem={({item}) => (
+            {isLoading ? <ActivityIndicator size={"large"} color={COLORS.primary} /> : error ? <Text>Something went wrong</Text> : <FlatList data={data} renderItem={({item}) => (
                 <PopularJobCard
                     item={item}
                />
