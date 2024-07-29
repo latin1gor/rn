@@ -3,7 +3,7 @@ import {RAPID_API_KEY} from "@env"
 import axios from "axios";
 
 const rapidApiKey = RAPID_API_KEY
-export const useFetch = (endpoint, query) => {
+const useFetch = (endpoint, query) => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -47,3 +47,5 @@ export const useFetch = (endpoint, query) => {
     }
     return {data, isLoading, error, refetch}
 }
+
+export default useFetch
