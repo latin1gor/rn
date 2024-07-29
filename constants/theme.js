@@ -1,3 +1,4 @@
+
 const COLORS = {
   primary: "#312651",
   secondary: "#444262",
@@ -11,9 +12,10 @@ const COLORS = {
 };
 
 const FONT = {
-  regular: "Inter",
-  medium: "Inter",
-  bold: "Inter",
+  regular: "Inter_400Regular",
+  medium: "Inter_500Medium",
+  bold: "Inter_700Bold",
+  light: "Inter_300Light"
 };
 
 const SIZES = {

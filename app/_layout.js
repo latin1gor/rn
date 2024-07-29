@@ -1,30 +1,36 @@
 // Rest of the import statements
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import {useEffect} from 'react';
-import {Stack} from "expo-router";
-import {Inter_900Black} from "@expo-google-fonts/inter";
-
+import { useEffect } from 'react';
+import { Stack } from 'expo-router';
+import {
+    Inter_300Light,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_700Bold
+} from '@expo-google-fonts/inter';
 
 SplashScreen.preventAutoHideAsync();
 
-
-export default function RootLayout() {
-    const [loaded, error] = useFonts({
-        Inter_900Black,
+export default function Layout() {
+    const [fontsLoaded] = useFonts({
+        Inter_300Light,
+        Inter_400Regular,
+        Inter_500Medium,
+        Inter_700Bold
     });
 
     useEffect(() => {
-        if (loaded || error) {
+        if (fontsLoaded) {
             SplashScreen.hideAsync();
         }
-    }, [loaded, error]);
+    }, [fontsLoaded]);
 
-    if (!loaded && !error) {
+    if (!fontsLoaded) {
         return null;
     }
 
     return (
-        <Stack/>
-    )
+        <Stack />
+    );
 }
