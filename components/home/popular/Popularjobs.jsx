@@ -9,7 +9,7 @@ import useFetch from "../../../hooks/useFetch";
 
 const Popularjobs = () => {
     const router = useRouter()
-    const { error, refetch, isLoading, data} = useFetch("jobs", {query: "React Developer", num_pages: 1})
+    const { error, refetch, isLoading, data} = useFetch("search", {query: "React Developer", num_pages: 1})
 
     console.log(data)
 
