@@ -8,6 +8,23 @@
       "expo-router"
     ],
     "name": "native-project",
-    "slug": "native-project"
+    "slug": "native-project",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "e38bf90f-79a2-4b72-a7b5-2b8f6a836ba5"
+      }
+    },
+    "owner": "latinigor",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e38bf90f-79a2-4b72-a7b5-2b8f6a836ba5"
+    },
+    "android": {},
+    "ios": {}
   }
 }
