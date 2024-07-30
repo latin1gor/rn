@@ -56,6 +56,11 @@ const styles = StyleSheet.create({
     fontFamily: FONT.regular,
     marginLeft: 2,
   },
+  publisherName: {
+    fontFamily: FONT.medium,
+    padding: SIZES.medium,
+
+  }
 });
 
 export default styles;

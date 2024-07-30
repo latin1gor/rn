@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text, TouchableOpacity, Image} from 'react-native'
 
 import styles from './nearbyjobcard.style'
+import {AVATAR_PLACEHOLDER} from "../../../../constants/images";
 
 const NearbyJobCard = ({job, handleNavigate}) => {
 
@@ -9,7 +10,9 @@ const NearbyJobCard = ({job, handleNavigate}) => {
         <TouchableOpacity
             style={styles.container}
             onPress={handleNavigate}>
-            <TouchableOpacity style={styles.logoContainer}><Image source={{uri: job.employer_logo || "https://cdn3d.iconscout.com/3d/premium/thumb/upwork-11507329-9336281.png?f=webp"} } resizeMode={"contain"} style={styles.logoImage}/>
+            <TouchableOpacity style={styles.logoContainer}><Image
+                source={{uri: job.employer_logo || AVATAR_PLACEHOLDER}} resizeMode={"contain"}
+                style={styles.logoImage}/>
             </TouchableOpacity>
 
 
