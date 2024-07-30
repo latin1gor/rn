@@ -7,6 +7,7 @@ import Welcome from "../components/home/welcome/Welcome";
 const Home = () => {
     const router = useRouter()
     const [state, setState] = useState()
+    const [searchTerm, setSearchTerm] = useState("")
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen options={{headerStyle: {backgroundColor: COLORS.lightWhite},
@@ -24,7 +25,12 @@ const Home = () => {
                <View style={{flex: 1,
                padding: SIZES.medium}}>
 
-                   <Welcome />
+                   <Welcome searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleClick={() => {
+                       if (searchTerm) {
+                           router.push(`/search/${searchTerm}`)
+                       }
+                   }}
+                   />
                    <Popularjobs/>
                    <Nearbyjobs />
 
