@@ -28,7 +28,7 @@ const JobDetails = () => {
   const displayTabContent = () => {
       switch (activeTab){
           case "Qualifications":
-              return <Specifics title={"Qualifications"} points={data[0].job_highlights?.qualifications ?? ["N/A"]}/>
+              return <Specifics title={"Qualifications"} points={data[0].job_highlights?.Qualifications ?? ["N/A"]}/>
           case "About":
           case "Responsibilities":
           default:
@@ -84,6 +84,7 @@ const JobDetails = () => {
                 jobPublisher={data[0].job_publisher}
               />
                 <JobTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+                {displayTabContent()}
             </View>
           )}
         </ScrollView>

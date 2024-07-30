@@ -8,7 +8,7 @@ const Tabs = ({tabs, activeTab, setActiveTab}) => {
   return (
     <View style={styles.container}>
       <FlatList data={tabs} renderItem={({item}) => (
-          <TabButton activeTab={activeTab} name={item} onHandleSearchTab={setActiveTab} />
+          <TabButton activeTab={activeTab} name={item} onHandleSearchTab={() => setActiveTab(item)} />
       )} horizontal showsHorizontalScrollIndicator={false} keyExtractor={item => item} contentContainerStyle={{columnGap: SIZES.small / 2}}/>
     </View>
   )
