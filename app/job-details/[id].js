@@ -9,7 +9,7 @@ import {
 import { Stack, useGlobalSearchParams, useRouter } from "expo-router";
 import useFetch from "../../hooks/useFetch";
 import { COLORS, SIZES } from "../../constants";
-import {Company, JobTabs, ScreenHeaderBtn} from "../../components";
+import {Company, JobTabs, ScreenHeaderBtn, Specifics} from "../../components";
 import Icons from "../../constants/icons";
 import { useState } from "react";
 
@@ -28,8 +28,11 @@ const JobDetails = () => {
   const displayTabContent = () => {
       switch (activeTab){
           case "Qualifications":
+              return <Specifics title={"Qualifications"} points={data[0].job_highlights?.qualifications ?? ["N/A"]}/>
           case "About":
           case "Responsibilities":
+          default:
+              break
       }
   }
 
