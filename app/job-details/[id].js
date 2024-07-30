@@ -9,7 +9,7 @@ import {
 import { Stack, useGlobalSearchParams, useRouter } from "expo-router";
 import useFetch from "../../hooks/useFetch";
 import { COLORS, SIZES } from "../../constants";
-import {Company, JobAbout, JobTabs, ScreenHeaderBtn, Specifics} from "../../components";
+import {Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics} from "../../components";
 import Icons from "../../constants/icons";
 import { useState } from "react";
 
@@ -90,6 +90,8 @@ const JobDetails = () => {
             </View>
           )}
         </ScrollView>
+
+          <JobFooter />
       </>
     </SafeAreaView>
   );
