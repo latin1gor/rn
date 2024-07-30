@@ -11,7 +11,7 @@ import useFetch from "../../hooks/useFetch";
 import { COLORS, SIZES } from "../../constants";
 import {Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics} from "../../components";
 import Icons from "../../constants/icons";
-import { useState } from "react";
+import {useCallback, useState} from "react";
 
 
 const tabs = ["About", "Qualifications", "Responsibilities"]
@@ -32,13 +32,17 @@ const JobDetails = () => {
           case "About":
               return <JobAbout info={data[0].job_description || "No data provided"} />
           case "Responsibilities":
-              return <Respo title={"Responsibilities"} points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}/>
+              return <Specifics title={"Responsibilities"} points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}/>
           default:
               break
       }
   }
 
-  const onRefresh = () => {};
+  const onRefresh = useCallback(() => {
+      setRefreshing(true)
+      refetch()
+      setRefreshing(false)
+  }, [])
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -74,7 +78,7 @@ const JobDetails = () => {
             <ActivityIndicator size={"large"} color={COLORS.primary} style={{minHeight: "90%"}} />
           ) : error ? (
             <Text>Something went wrong</Text>
-          ) : !data.length ? (
+          ) : data.length === 0 ? (
             <Text>No data</Text>
           ) : (
             <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
