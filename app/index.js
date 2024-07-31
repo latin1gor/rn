@@ -1,9 +1,10 @@
 import { View, ScrollView, SafeAreaView, Text} from "react-native";
 import {useState} from "react";
-import {Stack, useRouter} from "expo-router";
+import {SplashScreen, Stack, useRouter} from "expo-router";
 import { COLORS, icons, images, SIZES} from "../constants";
 import { Nearbyjobs, Popularjobs, ScreenHeaderBtn } from '../components'
 import Welcome from "../components/home/welcome/Welcome";
+
 const Home = () => {
     const router = useRouter()
     const [state, setState] = useState()
